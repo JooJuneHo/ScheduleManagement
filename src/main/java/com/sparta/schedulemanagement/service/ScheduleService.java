@@ -20,6 +20,7 @@ public class ScheduleService {
         this.scheduleRepository = scheduleRepository;
     }
 
+    @Transactional
     public ScheduleResponseDto createSchedule(ScheduleRequestDto requestDto) {
         // RequestDto -> Entity
         ScheduleEntity schedule = new ScheduleEntity(requestDto);
@@ -58,6 +59,7 @@ public class ScheduleService {
         }
     }
 
+    @Transactional
     public String deleteSchedule(Long id, String password) {
 
         // 해당 메모가 DB에 존재하는지 확인
